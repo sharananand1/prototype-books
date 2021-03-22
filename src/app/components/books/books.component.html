@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<div class="col-lg-12 col-md-12 col-12 my-4">
+  <div class="container-fluid">
+    <div class="main-card card">
+      <div class="card-body">
+        <div class="col-lg-12 col-md-12 text-center">
+        <h3 class="font-weight-bold">Buy Now And Get Exciting Gift Vouchers!!</h3>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3" *ngFor="let book of allBooks; let i = index">
+            <div class="card book my-4">
+              <div class="card-body text-center">
+                <img alt="" class="img-fluid" *ngIf="!book.thumbnailUrl" src="./assets/images/book.png" width="120">
+                <img alt="" class="img-fluid" *ngIf="book.thumbnailUrl" [src]="book.thumbnailUrl" width="120">
+                <h5>{{book.title}}</h5>
+                <div class="text-muted fix-height">Authors: <a *ngFor="let author of book.authors">{{author}}<span *ngIf="book.authors.length > 1">, </span> </a> </div>
+                <div class="card-qty">
+                  <form>
+                    <a class="value-button decrease" (click)="decreaseQuantity(i)"><i
+                      class="fa fa-minus"></i></a>
+                    <input value="0" class="number" [(ngModel)]="book.quantity" id="number_type3" name="qty_{{i}}"
+                           [readOnly]="true"/>
+                    <a class="value-button increase" (click)="increaseQuantity(i)"><i
+                      class="fa fa-plus"></i></a>
+                  </form>
+                </div>
+                <button class="btn btn-outline-secondary mt-3" (click)="orderNow(book)">Add To Cart <span class="fas fa-cart-plus"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

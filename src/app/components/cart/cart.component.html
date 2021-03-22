@@ -1,0 +1,137 @@
+<app-header></app-header>
+<div class="container mb-5">
+  <div class="card">
+  <div class="card-body">
+  <h1 class="heading checkout_heading">Checkout</h1>
+  <form ngNativeValidate >
+    <div class="row">
+      <div class="col-md-7">
+        <div class="checkout">
+          <h2>Shipping Address</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" name="shipping_name"
+                       placeholder="Name" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" name="shipping_phone_number" placeholder="Phone number" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="email" class="form-control" name="shipping_email"
+                       placeholder="Email" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" name="shipping_address_line_1" placeholder="Address" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="shipping_address_line_2"
+                       placeholder="Address Line 2(optional)">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" name="shipping_city" placeholder="City" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control"
+                       name="shipping_state" placeholder="State" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" name="shipping_post_code"
+                       placeholder="Zip/Postal Code" required>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="summary-cart">
+          <h2>Order Summary</h2>
+          <div class="row" *ngFor="let book of orderItems; let index = index;">
+            <div class="col-3" *ngIf="book.thumbnailUrl">
+              <img alt="" [src]="book.thumbnailUrl" class="img-fluid">
+            </div>
+            <div class="col-3" *ngIf="!book.thumbnailUrl">
+              <img alt="" src="./assets/images/book.png" class="img-fluid">
+            </div>
+            <div class="col-5">
+              <span> {{book.title}}</span>
+            </div>
+            <div class="col-3">
+              ₹300 x {{book.quantity}}
+            </div>
+            <div class="col-1">
+              <a class="text-danger cursorOnly" (click)="removeItemFromCart(index)"><i
+                class="fa fa-trash"></i></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <a class="cursorOnly" routerLink="/books" > +Add More Books</a>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-8 col-8">
+              Subtotal
+            </div>
+            <div class="col-md-4 col-4">
+              ₹450
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-8">
+              Shipping
+            </div>
+            <div class="col-md-4 col-4">
+              ₹30
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-8">
+              Total Tax
+            </div>
+            <div class="col-md-4 col-4">
+              ₹10
+            </div>
+          </div>
+          <div class="row total">
+            <div class="col-md-8 col-8">
+              Order Total
+            </div>
+            <div class="col-md-4 col-4">
+              ₹490
+            </div>
+          </div>
+          <span>Note: Tax 5% is applicable.</span>
+        </div>
+        <div class="checkout mt-4">
+          <div class="row m-0">
+            <div class="input-group">
+              <input class="form-control" placeholder="Apply Promo &amp; Save More" type="text">
+              <div class="input-group-append" style="cursor: pointer">
+                <span id="basic-addon2" class="input-group-text coupon-apply-btn">APPLY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-primary" [disabled]="!orderItems[0]" type="button" routerLink="/congrats">Pay Now </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+</div>

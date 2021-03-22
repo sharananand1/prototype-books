@@ -1,0 +1,205 @@
+html,body,.noScroll {
+  height:100%;
+}
+.noScroll {
+  display:table;
+  width: 100%;
+  margin-top: 0;
+  padding: 0 0 0 0; /*set left/right padding according to needs*/
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.row.display {
+  height: 100%;
+}
+.noTheme {
+  background: white;
+  padding: 4% 10%;
+}
+.theme {
+  background: #1A2389;
+}
+
+.row .no-float {
+  float: none;
+  height: 100%;
+}
+.positionAbsolute {
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight:500;
+}
+.positionAbsoluteImg {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.positionAbsolutePhoneImg{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.positionAbsolute .text-white {
+  text-decoration: underline;
+}
+.lightBlack {
+  color: #131828;
+  font-weight: 400;
+}
+h4.text-muted.login-title {
+  font-weight: 400;
+  font-size: 18px;
+}
+.modal-dialog {
+  max-width: 370px;
+}
+.modal-header {
+  border-bottom: unset !important;
+  padding: 0;
+}
+.modal-body {
+  padding: 0;
+}
+
+.modal-content {
+  border-radius: 0.5rem;
+}
+
+.text-mute {
+  font-size: 14px;
+  color: #454545;
+}
+
+.text-muted {
+  color: #9c9c9c !important;
+}
+
+.text-small {
+  font-size: 10px;
+  color: #9c9c9c !important;
+  cursor: pointer;
+}
+
+.form-group label {
+  color: grey!important;
+}
+.form-control{
+  color: #131828;
+  background-color: #fff;
+  border-color: #fcfcfc;
+}
+.form-control.modalForm {
+  transform: translateY(-3px);
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.09);
+  border: 0!important;
+  border-radius: 0;
+  background-color: #ffffff;
+}
+a.link {
+  text-decoration: underline;
+  cursor: pointer !important;
+}
+.sign-title{
+  font-weight:500;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+  .col-md-6.noTheme {
+    background: white;
+    padding: 4% 10%;
+  }
+
+  .mobileMargin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .form-group {
+    margin-bottom: 0rem;
+  }
+  .mt-5 {
+    margin-top: 0.3rem!important;
+  }
+  .mt-4 {
+    margin-top: 0.1rem!important;
+  }
+  .sign-title{
+    font-size:20px;
+    margin-top: 1rem;
+  }
+  h4.text-muted.login-title{
+    font-size: 14px;
+  }
+}
+
+
+.bg-image {
+  /*background-image: url("../../../assets/images/1.jpg");*/
+  filter: blur(8px);
+  -webkit-filter: blur(4px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-image:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  left: 0px;
+  top: 0px;
+  background-color: #1A2389;
+  opacity: 0.5;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+  .noTheme{
+    padding: 4% 6%;
+  }
+  .positionAbsolute{
+    left: 49%;
+    font-size: 18px;
+    text-align:center;
+
+  }
+}
+
+@media screen and (min-device-width: 992px) and (max-device-width: 1200px){
+  .positionAbsolute{
+    left: 49%;
+    font-size: 18px;
+    text-align: center;
+    top:48%;
+  }
+  .positionAbsoluteImg{
+    top: 40%;
+
+  }
+}

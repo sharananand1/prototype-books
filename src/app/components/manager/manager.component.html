@@ -1,0 +1,29 @@
+<header>
+  <nav>
+    <div class="card">
+      <div class="card-body text-center">
+        <h2>MANAGER PANEL</h2>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container mt-5">
+  <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+<p> Note : To increase the height, please touch the walls of dotted lines</p>
+    <div class="example-boundary">
+          <textarea class="textfield" cdkDragBoundary=".example-boundary" id="history" (cdkDragMoved)="getHeight()"
+                    cdkDrag (cdkDragEnded)="onDragEnded($event)" placeholder="Enter here"></textarea>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mt-4" *ngIf="XPosition && YPosition">
+        <p>Text Area Coordinates</p>
+        <h6>X Position: {{XPosition}}, Y Position: {{YPosition}}</h6>
+      </div>
+      <div class="col-md-4 mt-4" *ngIf="heightTextArea">
+        <p>Text Area Dimensions</p>
+        <h6>H: {{heightTextArea}}, W: {{widthTextArea}} </h6>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,50 @@
+<div class="noScroll">
+  <div class="row display">
+    <div class="col-md-6 noTheme no-float">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="link text-muted" routerLink="../books"><span class="fa fa-chevron-left"></span> Back To Home</a>
+        </div>
+        <div class="col-md-12 mt-4">
+          <h2 class="lightBlack sign-title">Sign In.</h2>
+          <h4 class="text-muted login-title">Welcome Back! Please enter your login details to continue.</h4>
+        </div>
+        <div class="col-md-12 mt-4">
+          <form ngNativeValidate (submit)="login()">
+            <div class="row">
+              <div class="col-md-12 mt-2 form-group">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <mat-label><a class="fas fa-envelope text-muted"></a>  Email</mat-label>
+                  <input matInput autocomplete="off" type="email" id="email" name="email" [(ngModel)]="loginObj.email"
+                         required>
+                </mat-form-field>
+              </div>
+              <div class="col-md-12 mt-2 form-group">
+                <mat-form-field appearance="outline" style="width: 100%">
+                  <mat-label><a class="fas fa-key text-muted"></a>  Password</mat-label>
+                  <input matInput autocomplete="off" type="password" id="pass" name="password"
+                         [(ngModel)]="loginObj.password" placeholder="" required>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6 mt-2 form-group">
+                <mat-checkbox class="d-table-cell pr-3 rem-title"></mat-checkbox> <h5 class="d-table-cell"> Remember me</h5>
+              </div>
+              <div class="col-md-6 mt-2 text-right form-group forgot-details">
+                <a class="link">Forgot Password?</a>
+              </div>
+              <div class="col-md-12 form-group mt-3 mb-3">
+                <button type="submit" class="btn btn-primary w-100 text-white loginBtn">LOG IN</button>
+                <h4 class="text-mute text-center mt-3">Don't have an account? <a class="link">Create New</a></h4>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 theme no-float">
+<!--      <img alt="" src="./assets/images/phone.png" class="positionAbsolutePhoneImg" width="150">-->
+      <img alt="" src="./assets/images/books.png" class="positionAbsoluteImg" width="340">
+      <h4 class="text-white positionAbsolute">Don't have an account?  <a class="text-white">Create New</a></h4>
+    </div>
+  </div>
+</div>

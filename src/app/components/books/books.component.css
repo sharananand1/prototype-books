@@ -1,0 +1,93 @@
+.main-card.card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  background:linear-gradient(to right, rgb(230, 218, 218), rgb(39, 64, 70));
+  color: white;
+}
+
+.book.card {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  color: black;
+  min-height: 370px;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+input:focus {
+  border: none;
+  outline: none;
+}
+.quantity input {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  text-align:center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-right: none;
+}
+
+input[type="button"] {
+  cursor: pointer
+}
+.btn-primary {
+  font-weight: bold;
+  padding: 10px 16px;
+  color: #fff;
+  border-radius: 30px;
+  background: #1A2389;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  border: none;
+  font-size: 14px;
+}
+.card-qty .value-button {
+  width: 38px;
+  height: 40px;
+  padding: 11px;
+  color: #fff;
+  line-height: 0;
+  font-size: 14px;
+  font-weight: lighter;
+  background-color: #1A2389;
+}
+.card-qty input.number {
+  border: none !important;
+  width: 40px!important;
+  background-color: #f2f2f2;
+  height: 40px;
+  font-size: 18px;
+  font-weight: lighter;
+  color: #1A2389;
+  padding: 0;
+}
+form .decrease {
+  margin-right: -4px;
+  border-radius: 30px 0 0 30px;
+}
+
+form .increase {
+  margin-left: -4px;
+  border-radius: 0 30px 30px 0;
+}
+
+input.number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  width: 22px;
+  height: 30px;
+}
+.disabled {
+  cursor: not-allowed;
+}
+.fix-height {
+  min-height: 46px;
+}

@@ -1,0 +1,87 @@
+<header>
+  <nav>
+    <div class="card fixed-position">
+      <div class="card-body text-center">
+        <h2>ONLINE RESERVATION</h2>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container card-container">
+  <div class="col-md-12 col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="col-md-9 col-lg-9 mx-auto col-12">
+          <h5 class="heading"> BOOK YOUR TABLE TO AVOID QUEUE</h5>
+          <form ngNativeValidate (submit)="addReservation()">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-6">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Enter Your Name</mat-label>
+                  <input matInput placeholder="Please Tell Us Your Name" name="name" [(ngModel)]="tableObj.name" required>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-md-6 col-6">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Enter Your Phone Number</mat-label>
+                  <input matInput placeholder="Phone Number" name="phone" [(ngModel)]="tableObj.phoneNumber" required>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-md-6 col-6">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Select Number Of Pax</mat-label>
+                  <mat-select name="totalPerson" [(ngModel)]="tableObj.pax" required>
+                    <mat-option value="2">2 OR Less</mat-option>
+                    <mat-option value="4">4 OR Less</mat-option>
+                    <mat-option value="6">6 OR Less</mat-option>
+                    <mat-option value="8">8 OR Less</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+                <mat-radio-group name="timeDuration"
+                                 aria-labelledby="example-radio-group-label"
+                                 class="example-radio-group"
+                                 [(ngModel)]="selectedDuration">
+                  <mat-radio-button class="example-radio-button" [value]="'now'">
+                    <p class="mr-3 mt-3">Now</p>
+                  </mat-radio-button>
+                </mat-radio-group>
+                <mat-radio-group name="timeDuration"
+                                 aria-labelledby="example-radio-group-label"
+                                 class="example-radio-group"
+                                 [(ngModel)]="selectedDuration">
+                  <mat-radio-button class="example-radio-button" [value]="'later'">
+                    <p class="mr-3 mt-3">Later</p>
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+              <div class="col-lg-6 col-md-6 col-6" *ngIf="selectedDuration == 'later'">
+                <mat-label>Select Date</mat-label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker" required name="date" readonly [(ngModel)]="tableObj.bookDate">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-md-6 col-6" *ngIf="selectedDuration == 'later'">
+                <mat-label>Select Time</mat-label>
+                <div>
+                  <input [ngxTimepicker]="timePicker" name="openAt" placeholder="Select Time" readonly class="timeInput"
+                         [(ngModel)]="tableObj.time" required>
+                  <ngx-material-timepicker #timePicker></ngx-material-timepicker>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-12 text-center">
+                <div class="col-lg-8 col-md-8 col-12 mx-auto">
+                <button class="btn btn-secondary w-100" type="submit"> RESERVE</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

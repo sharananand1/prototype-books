@@ -1,0 +1,76 @@
+/*.card-container {*/
+/*  margin-top: 10rem;*/
+/*  margin-bottom: 10rem;*/
+/*  z-index: 0;*/
+/*}*/
+
+/*a.badge {*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.card {*/
+/*  border-radius: 18px;*/
+/*  transform: translateY(-3px);*/
+/*  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);*/
+/*}*/
+
+/*.card-box {*/
+/*  transform: unset;*/
+/*  box-shadow: unset;*/
+/*}*/
+.example-box {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.example-box:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.example-handle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ccc;
+  cursor: move;
+  width: 24px;
+  height: 24px;
+}
+.example-boundary {
+  width: 520px;
+  height: 250px;
+  max-width: 100%;
+  border: dotted #ccc 2px;
+}
+#widthTest {
+  position: absolute;
+  visibility: hidden;
+  height: auto;
+  width: auto;
+  white-space: nowrap;
+}
+textarea.textfield {
+  border: 2px solid;
+  padding: 20px;
+  width: 300px;
+  resize: both;
+  overflow: auto;
+}
