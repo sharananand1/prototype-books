@@ -1,0 +1,29 @@
+<div>
+  <form ngNativeValidate (submit)="addReservation()">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Enter Your Name</mat-label>
+          <input matInput placeholder="Please Tell Us Your Name" name="name" [(ngModel)]="tableObj.name" required>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6 col-md-6 col-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Enter Your Phone Number</mat-label>
+          <input matInput placeholder="Phone Number" name="phone" [(ngModel)]="tableObj.phoneNumber" required>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6 col-md-6 col-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Select Number Of Pax</mat-label>
+          <mat-select name="totalPerson" [(ngModel)]="tableObj.pax" required>
+            <mat-option value="2">2 OR Less</mat-option>
+            <mat-option value="4">4 OR Less</mat-option>
+            <mat-option value="6">6 OR Less</mat-option>
+            <mat-option value="8">8 OR Less</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>

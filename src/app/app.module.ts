@@ -31,6 +31,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CongratulationsComponent } from './components/congratulations/congratulations.component';
+import { ValidationFormComponent } from './components/validation-form/validation-form.component';
 export const ToastConfig = {
   global: {
     newOnTop: true,
@@ -111,7 +112,8 @@ export const ToastConfig = {
     BooksComponent,
     HeaderComponent,
     FooterComponent,
-    CongratulationsComponent
+    CongratulationsComponent,
+    ValidationFormComponent
   ],
   imports: [
     BrowserModule,

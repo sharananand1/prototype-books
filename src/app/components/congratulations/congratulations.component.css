@@ -1,3 +1,25 @@
 .card {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
+#sectopnBG.eleOne.eleTwo.eleThree {
+  background-color: black;
+  height: 200px;
+  width: 200px;
+  color: #fff!important;
+}
+#sectopnBG.eleTwo.eleThree.eleOne {
+  background-color: blue!important;
+}
+
+.eleTwo.eleThree.eleOne#sectopnBG {
+  background-color: coral !important;
+}
+.eleTwo#sectopnBG.eleThree.eleOne {
+  background-color: darkgreen !important;
+}
+#sectopnBG.eleThree.eleOne {
+  background-color: crimson !important;
+}
+.eleTwo.eleThree.eleOne {
+  background-color: chocolate;
+}
