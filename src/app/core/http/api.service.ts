@@ -16,16 +16,11 @@ export class ApiService {
     return this.httpClient.post('register', data);
   }
 
-  cmsGetFaq(): Observable<any> { // get all faq
-    return this.httpClient.get('cms/faq');
+  addAccount(data): Observable<any> { // add account details
+    return this.httpClient.post('add-account', data);
   }
-
-  cmsGetBlog(): Observable<any> { // get all blog
-    return this.httpClient.get('cms/blog');
-  }
-
-  cmsGetTestimonials(): Observable<any> { // get all testimonial
-    return this.httpClient.get('cms/testimonial');
+  getBankTable(city, data): Observable<any> { // get bank table
+    return this.httpClient.post('banks?city=' + city, data);
   }
 }
 

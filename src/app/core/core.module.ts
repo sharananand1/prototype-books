@@ -9,13 +9,18 @@ import {HttpTokenInterceptor} from './interceptors/http.token.interceptor';
 import {AuthGuardService} from './guards/auth.guard.service';
 import {NoAuthGuardService} from './guards/no-auth.guard.service';
 import {DigitOnlyDirective} from './directives/digit-only.directive';
+import {UppercaseDirective} from './directives/uppercase.directive';
 @NgModule({
-  declarations: [DigitOnlyDirective],
+  declarations: [
+    DigitOnlyDirective,
+    UppercaseDirective
+  ],
   imports: [
     CommonModule
   ],
   exports: [
     DigitOnlyDirective,
+    UppercaseDirective
   ],
   providers: [
     ApiService,

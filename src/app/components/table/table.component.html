@@ -1,0 +1,89 @@
+<div class="bg">
+  <header>
+    <nav>
+      <div class="card fixed-position">
+        <div class="card-body text-center">
+          <h2 class="font-weight-bold text-white">TABLE DETAILS</h2>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container my-5">
+    <div class="col-md-12 col-lg-12 col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="col-lg-12 col-md-12 col-12 text-right">
+            <button class="btn-warning btn" type="button" routerLink="">Form</button>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Search Address</mat-label>
+                <input matInput placeholder="Enter address" [(ngModel)]="filterObj.address">
+                <button mat-icon-button matSuffix (click)="getTable()">
+                <mat-icon>search</mat-icon>
+              </button>
+              </mat-form-field>
+            </div>
+          <div class="col-md-3 col-lg-3 col-12">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Select City</mat-label>
+              <mat-select [(ngModel)]="filterObj.city" name="city" (ngModelChange)="getTable()">
+                <mat-option value="">Select City</mat-option>
+                <mat-option [value]="'DELHI'">DELHI</mat-option>
+                <mat-option [value]="'MUMBAI'">MUMBAI</mat-option>
+                <mat-option [value]="'GURGAON'">GURGAON</mat-option>
+                <mat-option [value]="'PUNE'">PUNE</mat-option>
+              </mat-select>
+              <!--<button mat-icon-button matSuffix>
+                <mat-icon>search</mat-icon>
+              </button>-->
+            </mat-form-field>
+          </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Select Branch</mat-label>
+                <mat-select [(ngModel)]="filterObj.branch" name="branch" (ngModelChange)="getTable()">
+                  <mat-option value="">Select Branch</mat-option>
+                  <mat-option [value]="'Hauz Khas'">Hauz Khas</mat-option>
+                  <mat-option [value]="'Dhaula Kuan'">Dhaula Kuan</mat-option>
+                  <mat-option [value]="'Palam Vihar'">Palam Vihar</mat-option>
+                  <mat-option [value]="'Geeta Bhavan'">Geeta Bhavan</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          <div class="col-md-9 col-lg-9 col-12 table-responsive">
+            <table class="table table-borderless">
+              <thead>
+              <tr>
+                <th>Bank ID</th>
+                <th>Bank Name</th>
+                <th>Branch</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>District</th>
+                <th>IFSC</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let bank of allBanks | paginate: { itemsPerPage: 10, currentPage: searchPage, totalItems: totalPage, id:'det4'}">
+                <td>{{bank.bank_id}}</td>
+                <td>{{bank.bank_name}}</td>
+                <td>{{bank.branch}}</td>
+                <td>{{bank.state}}</td>
+                <td>{{bank.city}}</td>
+                <td>{{bank.address}}</td>
+                <td>{{bank.district}}</td>
+                <td>{{bank.ifsc}}</td>
+              </tr>
+              </tbody>
+            </table>
+            <pagination-controls (pageChange)="pageChangedUnderWay($event)" id="det4"></pagination-controls>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

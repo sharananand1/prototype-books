@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiPrefix: 'http://www.prototype.com/api/v1/',
-  assetsUrl: 'http://www.prototype.com/proto-api/storage/',
+  apiPrefix: 'https://vast-shore-74260.herokuapp.com/',
+  assetsUrl: 'http://vast-shore-74260.herokuapp.com/storage/',
   authKey: 'prototype_token'
 };

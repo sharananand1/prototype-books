@@ -6,9 +6,13 @@ import {LoginComponent} from './components/login/login.component';
 import {BooksComponent} from './components/books/books.component';
 import {CartComponent} from './components/cart/cart.component';
 import {CongratulationsComponent} from './components/congratulations/congratulations.component';
+import {ValidationFormComponent} from './components/validation-form/validation-form.component';
+import {TableComponent} from './components/table/table.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: ValidationFormComponent},
+  {path: 'table/:city', component: TableComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'books', component: BooksComponent},
   {path: 'cart', component: CartComponent},
   {path: 'congrats', component: CongratulationsComponent},
@@ -17,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -32,6 +32,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CongratulationsComponent } from './components/congratulations/congratulations.component';
 import { ValidationFormComponent } from './components/validation-form/validation-form.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { TableComponent } from './components/table/table.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {NgxPaginationModule} from 'ngx-pagination';
 export const ToastConfig = {
   global: {
     newOnTop: true,
@@ -113,7 +119,8 @@ export const ToastConfig = {
     HeaderComponent,
     FooterComponent,
     CongratulationsComponent,
-    ValidationFormComponent
+    ValidationFormComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -141,6 +148,15 @@ export const ToastConfig = {
     MatSelectModule,
     NgxMaterialTimepickerModule,
     DragDropModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    MatIconModule,
+    MatButtonModule,
+    NgxPaginationModule,
   ],
   providers: [ {provide: 'SnotifyToastConfig', useValue: ToastConfig},
     SnotifyService],
