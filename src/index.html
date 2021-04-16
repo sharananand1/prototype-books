@@ -11,18 +11,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1976d2">
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#1976d2">
 </head>
 <body>
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
-  <!--<script>
+  <script>
       if('serviceWorker' in navigator) {
+          console.log(navigator);
+          console.log(navigator.serviceWorker);
           navigator.serviceWorker
-              .register('/sw.js')
-              .then(function() { console.log("Service Worker Registered"); });
+              .register('/ngsw-config.json')
+              .then(function() {
+                  console.log("Service Worker Registered");
+              });
       }
-  </script>-->
+  </script>
 </body>
 </html>

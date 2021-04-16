@@ -19,8 +19,8 @@ export class ApiService {
   addAccount(data): Observable<any> { // add account details
     return this.httpClient.post('add-account', data);
   }
-  getBankTable(city, data): Observable<any> { // get bank table
-    return this.httpClient.post('banks?city=' + city, data);
+  getBankTable(city): Observable<any> { // get bank table
+    return this.httpClient.get('banks?city=' + city);
   }
 }
 

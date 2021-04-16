@@ -28,7 +28,7 @@ export class TableComponent implements OnInit {
   }
 
   getTable(): void {
-    this.api.getBankTable(this.filterObj.city, this.filterObj).subscribe(res => {
+    this.api.getBankTable(this.filterObj.city).subscribe(res => {
       console.log(res);
       this.allBanks = res;
       this.totalPage = res.length;
